@@ -1,51 +1,44 @@
 ﻿//******************************************
-//  Copyright (C) 2011-2013 Charles Nurse  *
+//  Copyright (C) 2014-2015 Charles Nurse  *
 //                                         *
 //  Licensed under MIT License             *
-//  (see included License.txt file)        *
+//  (see included LICENSE)                 *
 //                                         *
 // *****************************************
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
-
 using FamilyTreeProject.Common;
+// ReSharper disable ConvertPropertyToExpressionBody
 
 namespace FamilyTreeProject
 {
     /// <summary>
     ///   Represents an individual in a family tree
     /// </summary>
-    public class Individual
+    public class Individual : BaseEntity
     {
-        #region Private Members
-
         private const string BaptismFormatString = "Bapt: {0}";
         private const string BirthFormatString = "Born: {0}";
         private const string BuriedFormatString = "Bur: {0}";
         private const string DeathFormatString = "Died: {0}";
 
-        #endregion
+        public Individual() : base(-1)
+        {
+            Initialize();
+        }
 
-        #region Constructors
+        public Individual(int treeId) : base(treeId)
+        {
+            Initialize();
+        }
 
-        public Individual()
+        private void Initialize()
         {
             Events = new List<Event>();
             Notes = new List<Note>();
         }
-
-        public Individual(int treeId)
-            : this()
-        {
-            TreeId = treeId;
-        }
-
-        #endregion
-
-        #region Public Properties
 
         /// <summary>
         ///   Gets or sets the Children of the Individual.
@@ -105,10 +98,6 @@ namespace FamilyTreeProject
         /// </summary>
         public IList<Individual> Spouses { get; set; }
 
-        public int TreeId { get; set; }
-
-        #endregion
-
         public string BirthDate
         {
             get
@@ -162,20 +151,5 @@ namespace FamilyTreeProject
                 return date;
             }
         }
-
-        #region IIdentifiable Members
-
-        /// <summary>
-        ///   Gets or sets the id of the individual
-        /// </summary>
-        public int Id { get; set; }
-
-        public bool IsNew
-        {
-            get { return Id == 0; }
-        }
-
-        #endregion
-
     }
 }

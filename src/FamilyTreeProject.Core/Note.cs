@@ -1,34 +1,22 @@
 ﻿//******************************************
-//  Copyright (C) 2011-2013 Charles Nurse  *
+//  Copyright (C) 2014-2015 Charles Nurse  *
 //                                         *
 //  Licensed under MIT License             *
-//  (see included License.txt file)        *
+//  (see included LICENSE)                 *
 //                                         *
 // *****************************************
 
-using System.Runtime.Serialization;
-
+// ReSharper disable ConvertPropertyToExpressionBody
 namespace FamilyTreeProject
 {
     public class Note
     {
-        #region Constructors
-
         public Note() { }
 
-        public Note(int treeId)
-            : this()
+        public Note(int treeId) : this()
         {
             TreeId = treeId;
         }
-
-        #endregion
-
-        public string Text { get; set; }
-
-        public int TreeId { get; set; }
-
-        #region IIdentifiable Members
 
         /// <summary>
         ///   Gets or sets the id of the note
@@ -40,7 +28,8 @@ namespace FamilyTreeProject
             get { return Id == 0; }
         }
 
-        #endregion
+        public string Text { get; set; }
 
+        public int TreeId { get; set; }
     }
 }

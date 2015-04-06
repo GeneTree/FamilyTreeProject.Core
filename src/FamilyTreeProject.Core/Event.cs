@@ -1,23 +1,21 @@
 ﻿//******************************************
-//  Copyright (C) 2011-2013 Charles Nurse  *
+//  Copyright (C) 2014-2015 Charles Nurse  *
 //                                         *
 //  Licensed under MIT License             *
-//  (see included License.txt file)        *
+//  (see included LICENSE)                 *
 //                                         *
 // *****************************************
 
-using System.Runtime.Serialization;
+using FamilyTreeProject.Common;
 
 namespace FamilyTreeProject
 {
-    public abstract class Event
+    public abstract class Event : BaseEntity
     {
-        #region Public Properties
+        protected Event(int treeId) : base(treeId) { }
 
         public string Date { get; set; }
 
         public string Place { get; set; }
-
-        #endregion
     }
 }

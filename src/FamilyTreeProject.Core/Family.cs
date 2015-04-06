@@ -1,41 +1,34 @@
 ﻿//******************************************
-//  Copyright (C) 2011-2013 Charles Nurse  *
+//  Copyright (C) 2014-2015 Charles Nurse  *
 //                                         *
 //  Licensed under MIT License             *
-//  (see included License.txt file)        *
+//  (see included LICENSE)                 *
 //                                         *
 // *****************************************
 
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using FamilyTreeProject.Common;
+
+// ReSharper disable ConvertPropertyToExpressionBody
 
 namespace FamilyTreeProject
 {
-    public class Family
+    public class Family : BaseEntity
     {
-        #region Constructors
+        public Family() : base(-1)
+        {
+            Initialize();
+        }
 
-        /// <summary>
-        ///   Constructs an Family object
-        /// </summary>
-        public Family()
+        public Family(int treeId) : base(treeId)
+        {
+        }
+
+        private void Initialize()
         {
             Children = new List<Individual>();
         }
-
-        /// <summary>
-        /// Constructs an Family object that is part of a specific Tree
-        /// </summary>
-        /// <param name="treeId">The Id of the Tree</param>
-        public Family(int treeId)
-            : this()
-        {
-            TreeId = treeId;
-        }
-
-        #endregion
-
-        #region Public Properties
 
         /// <summary>
         ///   Gets or sets the Children of the Family.
@@ -55,11 +48,6 @@ namespace FamilyTreeProject
         public int? HusbandId { get; set; }
 
         /// <summary>
-        /// Gets or sets the Id of the Tree to which this family belongs
-        /// </summary>
-        public int TreeId { get; set; }
-
-        /// <summary>
         ///   Gets or sets a reference to the <see cref = "Individual" /> object representing
         ///   this family's wife.
         ///   <seealso cref = "Individual" />
@@ -69,24 +57,6 @@ namespace FamilyTreeProject
         /// <summary>
         ///   Gets or sets the id of this family's wife
         /// </summary>
-        [DataMember]
         public int? WifeId { get; set; }
-
-        #endregion
-
-        #region IIdentifiable Members
-
-        /// <summary>
-        ///   Gets or sets the id of the family
-        /// </summary>
-        public int Id { get; set; }
-
-        public bool IsNew
-        {
-            get { return Id == 0; }
-        }
-
-        #endregion
-
     }
 }

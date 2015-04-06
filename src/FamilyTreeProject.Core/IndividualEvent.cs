@@ -1,12 +1,10 @@
 ﻿//******************************************
-//  Copyright (C) 2011-2013 Charles Nurse  *
+//  Copyright (C) 2014-2015 Charles Nurse  *
 //                                         *
 //  Licensed under MIT License             *
-//  (see included License.txt file)        *
+//  (see included LICENSE)                 *
 //                                         *
 // *****************************************
-
-using System.Runtime.Serialization;
 
 using FamilyTreeProject.Common;
 
@@ -14,6 +12,10 @@ namespace FamilyTreeProject
 {
     public class IndividualEvent : Event
     {
+        public IndividualEvent() : base(-1) { }
+
+        public IndividualEvent(int treeId) : base(treeId) { }
+
         public IndividualEventType EventType { get; set; }
     }
 }
