@@ -6,9 +6,15 @@
 //                                         *
 // *****************************************
 
-namespace FamilyTreeProject.Models
+using FamilyTreeProject.Common;
+
+namespace FamilyTreeProject
 {
-    class Source
+    public class Source : BaseEntity
     {
+        public Source() : base(-1) { }
+
+        public Source(int treeId) : base(treeId) { }
+
     }
 }

@@ -7,29 +7,17 @@
 // *****************************************
 
 // ReSharper disable ConvertPropertyToExpressionBody
+
+using FamilyTreeProject.Common;
+
 namespace FamilyTreeProject
 {
-    public class Note
+    public class Note : BaseEntity
     {
-        public Note() { }
+        public Note() : base(-1) { }
 
-        public Note(int treeId) : this()
-        {
-            TreeId = treeId;
-        }
-
-        /// <summary>
-        ///   Gets or sets the id of the note
-        /// </summary>
-        public int Id { get; set; }
-
-        public bool IsNew
-        {
-            get { return Id == 0; }
-        }
+        public Note(int treeId) : base(treeId) { }
 
         public string Text { get; set; }
-
-        public int TreeId { get; set; }
     }
 }
