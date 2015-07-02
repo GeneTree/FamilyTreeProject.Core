@@ -5,6 +5,13 @@
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
     </Compartments>
+    <InheritanceLine Type="FamilyTreeProject.Common.BaseEntity" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="5.25" Y="1.938" />
+        <Point X="6.875" Y="1.938" />
+        <Point X="6.875" Y="2.5" />
+      </Path>
+    </InheritanceLine>
     <AssociationLine Name="Children" Type="FamilyTreeProject.Individual">
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.225" Y="0.175" />
@@ -33,7 +40,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAiAEABAAABDEAAAAAEAAQAAgAwAAAAAUABAIAAAAg=</HashCode>
+      <HashCode>AAEgAEAAAABBDQAAAAAEAAQAAgAgQAAAgQABAAAAABg=</HashCode>
       <FileName>Individual.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -45,10 +52,16 @@
       <Property Name="Events" />
       <Property Name="Notes" />
     </ShowAsCollectionAssociation>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="FamilyTreeProject.Event">
     <Position X="9.25" Y="4.5" Width="1.5" />
+    <InheritanceLine Type="FamilyTreeProject.Common.BaseEntity" FixedFromPoint="true">
+      <Path>
+        <Point X="5.25" Y="1.688" />
+        <Point X="10" Y="1.688" />
+        <Point X="10" Y="4.5" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAEAAAAAAAAA=</HashCode>
       <FileName>Event.cs</FileName>
@@ -62,12 +75,33 @@
     </TypeIdentifier>
   </Class>
   <Class Name="FamilyTreeProject.Note">
-    <Position X="2.75" Y="5" Width="1.5" />
+    <Position X="3" Y="5" Width="1.5" />
+    <InheritanceLine Type="FamilyTreeProject.Common.BaseEntity" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4" Y="2.69" />
+        <Point X="4" Y="4.876" />
+        <Point X="4" Y="4.876" />
+        <Point X="4" Y="5" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAEAAAAAAAAAAAAAAAAAAAEAACAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
       <FileName>Note.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FamilyTreeProject.Tree">
+    <Position X="1.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tree.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FamilyTreeProject.Common.BaseEntity">
+    <Position X="3.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAEAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Common\BaseEntity.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
