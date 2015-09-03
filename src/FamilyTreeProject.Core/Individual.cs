@@ -17,35 +17,16 @@ namespace FamilyTreeProject
     /// <summary>
     ///   Represents an individual in a family tree
     /// </summary>
-    public class Individual : BaseEntity
+    public class Individual : AncestorEntity
     {
         private const string BaptismFormatString = "Bapt: {0}";
         private const string BirthFormatString = "Born: {0}";
         private const string BuriedFormatString = "Bur: {0}";
         private const string DeathFormatString = "Died: {0}";
 
-        public Individual() : base(-1)
-        {
-            Initialize();
-        }
+        public Individual() : base(-1) { }
 
-        public Individual(int treeId) : base(treeId)
-        {
-            Initialize();
-        }
-
-        private void Initialize()
-        {
-            Events = new List<Event>();
-            Notes = new List<Note>();
-        }
-
-        /// <summary>
-        ///   Gets or sets the Children of the Individual.
-        /// </summary>
-        public IList<Individual> Children { get; set; }
-
-        public IList<Event> Events { get; set; }
+        public Individual(int treeId) : base(treeId) { }
 
         /// <summary>
         ///   Gets or sets a reference to the <see cref = "Individual" /> object representing
@@ -81,12 +62,13 @@ namespace FamilyTreeProject
         /// </summary>
         public int? MotherId { get; set; }
 
+        /// <summary>
+        /// Gets or sets the name of this Individual
+        /// </summary>
         public string Name
         {
             get { return String.Format("{0}, {1}", LastName, FirstName); }
         }
-
-        public IList<Note> Notes { get; set; }
 
         /// <summary>
         ///   Gets or sets the Sex of this individual
@@ -98,18 +80,21 @@ namespace FamilyTreeProject
         /// </summary>
         public IList<Individual> Spouses { get; set; }
 
+        /// <summary>
+        /// Gets the Birthdate of this individual
+        /// </summary>
         public string BirthDate
         {
             get
             {
                 string date = String.Empty;
-                var birthdate = (from IndividualEvent e in Events
-                                 where e.EventType == IndividualEventType.Birth
+                var birthdate = (from Fact e in Facts
+                                 where e.FactType == FactType.Birth
                                  select e).SingleOrDefault();
                 if (birthdate == null)
                 {
-                    var baptdate = (from IndividualEvent e in Events
-                                    where e.EventType == IndividualEventType.Baptism
+                    var baptdate = (from Fact e in Facts
+                                    where e.FactType == FactType.Baptism
                                     select e).SingleOrDefault();
                     if (baptdate != null)
                     {
@@ -125,18 +110,21 @@ namespace FamilyTreeProject
             }
         }
 
+        /// <summary>
+        /// Gets the DeathDate of this individual
+        /// </summary>
         public string DeathDate
         {
             get
             {
                 string date = String.Empty;
-                var deathdate = (from IndividualEvent e in Events
-                                 where e.EventType == IndividualEventType.Death
+                var deathdate = (from Fact e in Facts
+                                 where e.FactType == FactType.Death
                                  select e).SingleOrDefault();
                 if (deathdate == null)
                 {
-                    var burialdate = (from IndividualEvent e in Events
-                                      where e.EventType == IndividualEventType.Burial
+                    var burialdate = (from Fact e in Facts
+                                      where e.FactType == FactType.Burial
                                       select e).SingleOrDefault();
                     if (burialdate != null)
                     {
@@ -150,6 +138,20 @@ namespace FamilyTreeProject
 
                 return date;
             }
+        }
+
+        public Individual Clone()
+        {
+            return new Individual
+                        {
+                            FatherId = FatherId,
+                            FirstName = FirstName,
+                            Id = Id,
+                            LastName = LastName,
+                            MotherId = MotherId,
+                            Sex = Sex,
+                            TreeId = TreeId
+                        }; 
         }
     }
 }

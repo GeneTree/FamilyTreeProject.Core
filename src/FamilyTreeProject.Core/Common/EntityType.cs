@@ -6,16 +6,16 @@
 //                                         *
 // *****************************************
 
-using FamilyTreeProject.Common;
-
-namespace FamilyTreeProject
+namespace FamilyTreeProject.Common
 {
-    public class IndividualEvent : Event
+    public enum EntityType
     {
-        public IndividualEvent() : base(-1) { }
-
-        public IndividualEvent(int treeId) : base(treeId) { }
-
-        public IndividualEventType EventType { get; set; }
+        Individual = 1,
+        Family = 2,
+        Fact = 3,
+        Source = 4,
+        Repository = 5,
+        Note = 6,
+        Citation = 7
     }
 }

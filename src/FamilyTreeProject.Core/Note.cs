@@ -12,12 +12,18 @@ using FamilyTreeProject.Common;
 
 namespace FamilyTreeProject
 {
-    public class Note : BaseEntity
+    /// <summary>
+    /// Note is a class that represents a Note
+    /// </summary>
+    public class Note : OwnedEntity
     {
         public Note() : base(-1) { }
 
         public Note(int treeId) : base(treeId) { }
 
+        /// <summary>
+        /// The text of the Note
+        /// </summary>
         public string Text { get; set; }
     }
 }

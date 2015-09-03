@@ -6,16 +6,17 @@
 //                                         *
 // *****************************************
 
-using FamilyTreeProject.Common;
+using NUnit.Framework;
 
-namespace FamilyTreeProject
+namespace FamilyTreeProject.Core.Tests
 {
-    public abstract class Event : BaseEntity
+    [TestFixture]
+    public class DateStructureTests
     {
-        protected Event(int treeId) : base(treeId) { }
-
-        public string Date { get; set; }
-
-        public string Place { get; set; }
+        [Test]
+        public void DoTest()
+        {
+            
+        }
     }
 }

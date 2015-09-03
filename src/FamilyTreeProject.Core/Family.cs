@@ -7,33 +7,20 @@
 // *****************************************
 
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 using FamilyTreeProject.Common;
 
 // ReSharper disable ConvertPropertyToExpressionBody
 
 namespace FamilyTreeProject
 {
-    public class Family : BaseEntity
+    /// <summary>
+    /// Family is a class that represents a family of ancestors
+    /// </summary>
+    public class Family : AncestorEntity
     {
-        public Family() : base(-1)
-        {
-            Initialize();
-        }
+        public Family() : base(-1) { }
 
-        public Family(int treeId) : base(treeId)
-        {
-        }
-
-        private void Initialize()
-        {
-            Children = new List<Individual>();
-        }
-
-        /// <summary>
-        ///   Gets or sets the Children of the Family.
-        /// </summary>
-        public IList<Individual> Children { get; set; }
+        public Family(int treeId) : base(treeId) { }
 
         /// <summary>
         ///   Gets or sets a reference to the <see cref = "Individual" /> object representing

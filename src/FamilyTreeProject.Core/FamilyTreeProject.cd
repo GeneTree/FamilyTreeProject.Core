@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FamilyTreeProject.Common.BaseEntity">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAEAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Common\BaseEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FamilyTreeProject.Common.Entity">
+    <Position X="7.25" Y="2.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Notes" Type="FamilyTreeProject.Note" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.25" Y="3.625" />
+        <Point X="3.75" Y="3.625" />
+        <Point X="3.75" Y="8" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-3.391" Y="4.485" Height="0.182" Width="0.767" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Multimedia" Type="FamilyTreeProject.MultimediaLink" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.25" Y="3.125" />
+        <Point X="1.5" Y="3.125" />
+        <Point X="1.5" Y="8" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="4.164" Y="3.242" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\Entity.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Notes" />
+      <Property Name="Multimedia" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="FamilyTreeProject.Common.AncestorEntity">
+    <Position X="5.75" Y="7.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Children" Type="FamilyTreeProject.Individual" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.906" Y="8.541" />
+        <Point X="6.906" Y="9.157" />
+        <Point X="8" Y="9.157" />
+        <Point X="8" Y="9.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.48" Y="0.796" Height="0.182" Width="0.936" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Citations" Type="FamilyTreeProject.Citation" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.25" Y="7.812" />
+        <Point X="10.167" Y="7.812" Type="JumpStart" />
+        <Point X="10.333" Y="7.812" Type="JumpEnd" />
+        <Point X="11.312" Y="7.812" />
+        <Point X="11.312" Y="8.316" />
+        <Point X="12" Y="8.316" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="3.4" Y="0.59" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Facts" Type="FamilyTreeProject.Fact" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.25" Y="8.375" />
+        <Point X="8.625" Y="8.375" />
+        <Point X="8.625" Y="8.375" />
+        <Point X="9.5" Y="8.375" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.859" Y="0.102" Height="0.182" Width="0.795" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAABAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\AncestorEntity.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Children" />
+      <Property Name="Citations" />
+      <Property Name="Facts" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="FamilyTreeProject.Fact">
+    <Position X="9.5" Y="8" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <InheritanceLine Type="FamilyTreeProject.Common.OwnedEntity" ManuallyRouted="true">
+      <Path>
+        <Point X="8" Y="6.627" />
+        <Point X="8" Y="7.349" />
+        <Point X="10.25" Y="7.349" />
+        <Point X="10.25" Y="8" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAQAAAAABAEAAAAAAAAA=</HashCode>
+      <FileName>Fact.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Citations" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="FamilyTreeProject.Family">
+    <Position X="4.25" Y="9.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Wife" Type="FamilyTreeProject.Individual">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.36" Y="0.102" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAIAAEAAAAIAAAAAAA=</HashCode>
+      <FileName>Family.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Husband" />
+      <Property Name="Wife" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="FamilyTreeProject.Individual">
+    <Position X="7.25" Y="9.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <InheritanceLine Type="FamilyTreeProject.Common.AncestorEntity" FixedToPoint="true">
+      <Path>
+        <Point X="6.5" Y="8.541" />
+        <Point X="6.5" Y="9.375" />
+        <Point X="7.5" Y="9.375" />
+        <Point X="7.5" Y="9.75" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="Father" Type="FamilyTreeProject.Individual" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.75" Y="11.375" />
+        <Point X="9.556" Y="11.375" />
+        <Point X="9.556" Y="11.625" />
+        <Point X="8.75" Y="11.625" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.484" Y="0.027" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Mother" Type="FamilyTreeProject.Individual" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.75" Y="10.823" />
+        <Point X="9.549" Y="10.823" />
+        <Point X="9.549" Y="11.188" />
+        <Point X="8.75" Y="11.188" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.478" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Spouses" Type="FamilyTreeProject.Individual" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.75" Y="11.875" />
+        <Point X="9.569" Y="11.875" />
+        <Point X="9.569" Y="12.188" />
+        <Point X="8.75" Y="12.188" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.449" Y="0.075" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAEAAEAAAABBDAAAAAAAAAQAAAAgQAAAgQABAAAAABg=</HashCode>
+      <FileName>Individual.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Father" />
+      <Property Name="Mother" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Spouses" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="FamilyTreeProject.Note">
+    <Position X="3" Y="8" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <InheritanceLine Type="FamilyTreeProject.Common.OwnedEntity" FixedToPoint="true">
+      <Path>
+        <Point X="8" Y="6.627" />
+        <Point X="8" Y="7.349" />
+        <Point X="6.583" Y="7.349" Type="JumpStart" />
+        <Point X="6.417" Y="7.349" Type="JumpEnd" />
+        <Point X="4" Y="7.349" />
+        <Point X="4" Y="8" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Note.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FamilyTreeProject.Citation">
+    <Position X="12" Y="8" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <InheritanceLine Type="FamilyTreeProject.Common.OwnedEntity" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8" Y="6.627" />
+        <Point X="8" Y="7.36" />
+        <Point X="12.438" Y="7.36" />
+        <Point X="12.438" Y="8" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="Source" Type="FamilyTreeProject.Source" FixedFromPoint="true">
+      <Path>
+        <Point X="12.938" Y="8" />
+        <Point X="12.938" Y="7.069" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.765" Y="0.421" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAQAAAAAAAAAABAAAAAAAABAAAACAAAAAA=</HashCode>
+      <FileName>Citation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Source" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="FamilyTreeProject.Source">
+    <Position X="11.75" Y="5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="Repository" Type="FamilyTreeProject.Repository">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.001" Y="0.213" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAEAAjAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Source.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Repository" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="FamilyTreeProject.Repository">
+    <Position X="11.75" Y="2.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <InheritanceLine Type="FamilyTreeProject.Common.Entity" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8" Y="3.791" />
+        <Point X="8" Y="4.5" />
+        <Point X="12.062" Y="4.5" />
+        <Point X="12.062" Y="4.184" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Repository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FamilyTreeProject.Tree">
+    <Position X="4.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAEAAAAAAAAQEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tree.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FamilyTreeProject.MultimediaLink">
+    <Position X="0.75" Y="8" Width="1.5" />
+    <InheritanceLine Type="FamilyTreeProject.Common.OwnedEntity" FixedToPoint="true">
+      <Path>
+        <Point X="8" Y="6.627" />
+        <Point X="8" Y="7.349" />
+        <Point X="6.583" Y="7.349" Type="JumpStart" />
+        <Point X="6.417" Y="7.349" Type="JumpEnd" />
+        <Point X="3.833" Y="7.349" Type="JumpStart" />
+        <Point X="3.667" Y="7.349" Type="JumpEnd" />
+        <Point X="2" Y="7.349" />
+        <Point X="2" Y="8" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAEAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MultimediaLink.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FamilyTreeProject.Common.OwnedEntity">
+    <Position X="7.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\OwnedEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
