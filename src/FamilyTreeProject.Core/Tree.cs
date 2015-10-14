@@ -21,9 +21,9 @@ namespace FamilyTreeProject
         public int TreeId { get; set; }
 
         /// <summary>
-        /// The Name of the Tree
+        /// The Description of the Tree
         /// </summary>
-        public string Name { get; set; }
+        public string Description { get; set; }
 
         /// <summary>
         /// The Id of the current home or root individual
@@ -31,9 +31,24 @@ namespace FamilyTreeProject
         public int HomeIndividualId { get; set; }
 
         /// <summary>
+        /// The Id of the last viewed individual
+        /// </summary>
+        public int LastViewedIndividualId { get; set; }
+
+        /// <summary>
+        /// The Name of the Tree
+        /// </summary>
+        public string Name { get; set; }
+
+        /// <summary>
         /// The owner of the tree (this Id can be used to associate trees with "users")
         /// An implementation system will manage the "owning" of a tree
         /// </summary>
         public int OwnerId { get; set; }
+
+        /// <summary>
+        /// The Title of the Tree
+        /// </summary>
+        public string Title { get; set; }
     }
 }
