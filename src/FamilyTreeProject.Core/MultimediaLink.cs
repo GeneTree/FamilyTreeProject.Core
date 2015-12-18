@@ -30,7 +30,7 @@ namespace FamilyTreeProject
 		public string Format { get; set; }
 
 		/// <summary>
-        /// The title of hte Miltimedia
+        /// The title of the Multimedia
         /// </summary>
 		public string Title { get; set; }
     }

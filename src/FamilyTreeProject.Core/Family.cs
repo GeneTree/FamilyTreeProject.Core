@@ -45,5 +45,21 @@ namespace FamilyTreeProject
         ///   Gets or sets the id of this family's wife
         /// </summary>
         public int? WifeId { get; set; }
+
+        /// <summary>
+        /// Create a shallow copy of this individual
+        /// </summary>
+        /// <returns>An Individual</returns>
+        public Family Clone()
+        {
+            return new Family
+            {
+                HusbandId = HusbandId,
+                Id = Id,
+                WifeId = WifeId,
+                TreeId = TreeId
+            };
+        }
+
     }
 }

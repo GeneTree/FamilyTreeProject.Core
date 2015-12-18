@@ -6,7 +6,9 @@
 //                                         *
 // *****************************************
 
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace FamilyTreeProject
 {
@@ -15,6 +17,17 @@ namespace FamilyTreeProject
     /// </summary>
     public class Tree
     {
+        public Tree()
+        {
+            Name = String.Empty;
+            Title = String.Empty;
+            Description = String.Empty;
+            HomeIndividualId = -1;
+            ImageId = -1;
+            LastViewedIndividualId = -1;
+            OwnerId = -1;
+        }
+
         /// <summary>
         /// The Id of the Tree
         /// </summary>
@@ -29,6 +42,11 @@ namespace FamilyTreeProject
         /// The Id of the current home or root individual
         /// </summary>
         public int HomeIndividualId { get; set; }
+
+        /// <summary>
+        /// The Id of the image displayed on the main view
+        /// </summary>
+        public int ImageId { get; set; }
 
         /// <summary>
         /// The Id of the last viewed individual

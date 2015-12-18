@@ -19,14 +19,12 @@ namespace FamilyTreeProject
     /// </summary>
     public class Individual : AncestorEntity
     {
-        private const string BaptismFormatString = "Bapt: {0}";
-        private const string BirthFormatString = "Born: {0}";
-        private const string BuriedFormatString = "Bur: {0}";
-        private const string DeathFormatString = "Died: {0}";
+        public Individual() : this(-1) { }
 
-        public Individual() : base(-1) { }
-
-        public Individual(int treeId) : base(treeId) { }
+        public Individual(int treeId) : base(treeId)
+        {
+            ImageId = -1;
+        }
 
         /// <summary>
         ///   Gets or sets a reference to the <see cref = "Individual" /> object representing
@@ -44,6 +42,11 @@ namespace FamilyTreeProject
         ///   Gets or sets the first name of the individual
         /// </summary>
         public string FirstName { get; set; }
+
+        /// <summary>
+        /// The Id of the image displayed on the main view
+        /// </summary>
+        public int ImageId { get; set; }
 
         /// <summary>
         ///   Gets or sets the last name of the individual
@@ -81,65 +84,9 @@ namespace FamilyTreeProject
         public IList<Individual> Spouses { get; set; }
 
         /// <summary>
-        /// Gets the Birthdate of this individual
+        /// Create a shallow copy of this individual
         /// </summary>
-        public string BirthDate
-        {
-            get
-            {
-                string date = String.Empty;
-                var birthdate = (from Fact e in Facts
-                                 where e.FactType == FactType.Birth
-                                 select e).SingleOrDefault();
-                if (birthdate == null)
-                {
-                    var baptdate = (from Fact e in Facts
-                                    where e.FactType == FactType.Baptism
-                                    select e).SingleOrDefault();
-                    if (baptdate != null)
-                    {
-                        date = String.Format(BaptismFormatString, baptdate.Date);
-                    }
-                }
-                else
-                {
-                    date = String.Format(BirthFormatString, birthdate.Date);
-                }
-
-                return date;
-            }
-        }
-
-        /// <summary>
-        /// Gets the DeathDate of this individual
-        /// </summary>
-        public string DeathDate
-        {
-            get
-            {
-                string date = String.Empty;
-                var deathdate = (from Fact e in Facts
-                                 where e.FactType == FactType.Death
-                                 select e).SingleOrDefault();
-                if (deathdate == null)
-                {
-                    var burialdate = (from Fact e in Facts
-                                      where e.FactType == FactType.Burial
-                                      select e).SingleOrDefault();
-                    if (burialdate != null)
-                    {
-                        date = String.Format(BuriedFormatString, burialdate.Date);
-                    }
-                }
-                else
-                {
-                    date = String.Format(DeathFormatString, deathdate.Date);
-                }
-
-                return date;
-            }
-        }
-
+        /// <returns>An Individual</returns>
         public Individual Clone()
         {
             return new Individual
@@ -147,6 +94,7 @@ namespace FamilyTreeProject
                             FatherId = FatherId,
                             FirstName = FirstName,
                             Id = Id,
+                            ImageId = ImageId,
                             LastName = LastName,
                             MotherId = MotherId,
                             Sex = Sex,
