@@ -182,4 +182,4 @@ UpgradeLog*.htm
 # Microsoft Fakes
 FakesAssemblies/
 
-*/project.lock.json
+/src/FamilyTreeProject.Core/project.lock.json
