@@ -9,6 +9,7 @@
 using System;
 using System.Text;
 
+// ReSharper disable once CheckNamespace
 namespace FamilyTreeProject.Common
 {
     public class DateValue

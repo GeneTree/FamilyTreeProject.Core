@@ -10,6 +10,7 @@
 
 using FamilyTreeProject.Common;
 
+// ReSharper disable once CheckNamespace
 namespace FamilyTreeProject
 {
     /// <summary>
@@ -17,9 +18,9 @@ namespace FamilyTreeProject
     /// </summary>
     public class Note : OwnedEntity
     {
-        public Note() : base(-1) { }
+        public Note() : base(string.Empty) { }
 
-        public Note(int treeId) : base(treeId) { }
+        public Note(string treeId) : base(treeId) { }
 
         /// <summary>
         /// The text of the Note

@@ -8,6 +8,7 @@
 
 using FamilyTreeProject.Common;
 
+// ReSharper disable once CheckNamespace
 namespace FamilyTreeProject
 {
     /// <summary>
@@ -15,9 +16,9 @@ namespace FamilyTreeProject
     /// </summary>
     public class MultimediaLink : OwnedEntity
     {
-        public MultimediaLink() : base(-1) { }
+        public MultimediaLink() : base(string.Empty) { }
 
-        public MultimediaLink(int treeId) : base(treeId) { }
+        public MultimediaLink(string treeId) : base(treeId) { }
 
 		/// <summary>
         /// The file path (or Uri)

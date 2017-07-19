@@ -6,6 +6,7 @@
 //                                         *
 // *****************************************
 
+// ReSharper disable once CheckNamespace
 namespace FamilyTreeProject.Common
 {
     public abstract class OwnedEntity : Entity
@@ -14,12 +15,12 @@ namespace FamilyTreeProject.Common
         /// Constructs an OwnedEntity.
         /// </summary>
         /// <param name="treeId">The Id of the Tree</param>
-        protected OwnedEntity(int treeId) : base(treeId) { }
+        protected OwnedEntity(string treeId) : base(treeId) { }
 
         /// <summary>
         /// The Id of the owner entity
         /// </summary>
-        public int OwnerId { get; set; }
+        public string OwnerId { get; set; }
 
         /// <summary>
         /// The type of the owner entity

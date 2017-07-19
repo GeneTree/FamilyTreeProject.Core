@@ -7,6 +7,7 @@
 // *****************************************
 
 // ReSharper disable ConvertPropertyToExpressionBody
+// ReSharper disable once CheckNamespace
 namespace FamilyTreeProject.Common
 {
     /// <summary>
@@ -18,28 +19,28 @@ namespace FamilyTreeProject.Common
         /// Constructs a Base Entity
         /// </summary>
         /// <param name="treeId">The Id of the Tree</param>
-        protected BaseEntity(int treeId)
+        protected BaseEntity(string treeId)
         {
-            Id = 0;
+            Id = string.Empty;
             TreeId = treeId;
         }
 
         /// <summary>
         ///   Gets or sets the id of the individual
         /// </summary>
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
         /// This property indicates whether the entity is New
         /// </summary>
         public bool IsNew
         {
-            get { return Id == 0; }
+            get { return string.IsNullOrEmpty(Id); }
         }
 
         /// <summary>
         /// The Id of the Tree to which this entity belongs
         /// </summary>
-        public int TreeId { get; set; }
+        public string TreeId { get; set; }
     }
 }

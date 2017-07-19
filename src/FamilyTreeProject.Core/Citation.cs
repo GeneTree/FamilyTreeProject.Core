@@ -8,6 +8,7 @@
 
 using FamilyTreeProject.Common;
 
+// ReSharper disable once CheckNamespace
 namespace FamilyTreeProject
 {
     /// <summary>
@@ -15,9 +16,9 @@ namespace FamilyTreeProject
     /// </summary>
     public class Citation : OwnedEntity
     {
-        public Citation() : base(-1) { }
+        public Citation() : base(string.Empty) { }
 
-        public Citation(int treeId) : base(treeId) { }
+        public Citation(string treeId) : base(treeId) { }
 
         /// <summary>
         /// The Date of the Citation
@@ -32,7 +33,7 @@ namespace FamilyTreeProject
         /// <summary>
         /// The Id of the Source to which the citation is a part
         /// </summary>
-        public int? SourceId { get; set; }
+        public string SourceId { get; set; }
 
         /// <summary>
         /// The Source to which the citation belongs

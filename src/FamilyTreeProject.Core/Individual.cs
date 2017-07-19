@@ -8,10 +8,11 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using FamilyTreeProject.Common;
+
 // ReSharper disable ConvertPropertyToExpressionBody
 
+// ReSharper disable once CheckNamespace
 namespace FamilyTreeProject
 {
     /// <summary>
@@ -19,9 +20,9 @@ namespace FamilyTreeProject
     /// </summary>
     public class Individual : AncestorEntity
     {
-        public Individual() : this(-1) { }
+        public Individual() : this(string.Empty) { }
 
-        public Individual(int treeId) : base(treeId)
+        public Individual(string treeId) : base(treeId)
         {
             ImageId = -1;
         }
@@ -36,7 +37,7 @@ namespace FamilyTreeProject
         /// <summary>
         ///   Gets or sets the id of this individual's father
         /// </summary>
-        public int? FatherId { get; set; }
+        public string FatherId { get; set; }
 
         /// <summary>
         ///   Gets or sets the first name of the individual
@@ -63,7 +64,7 @@ namespace FamilyTreeProject
         /// <summary>
         ///   Gets or sets the id of this individual's mother
         /// </summary>
-        public int? MotherId { get; set; }
+        public string MotherId { get; set; }
 
         /// <summary>
         /// Gets or sets the name of this Individual

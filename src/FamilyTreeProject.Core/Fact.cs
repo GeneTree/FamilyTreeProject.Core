@@ -9,6 +9,7 @@
 using System.Collections.Generic;
 using FamilyTreeProject.Common;
 
+// ReSharper disable once CheckNamespace
 namespace FamilyTreeProject
 {
     /// <summary>
@@ -16,9 +17,9 @@ namespace FamilyTreeProject
     /// </summary>
     public class Fact : OwnedEntity
     {
-        public Fact() : this(-1) { }
+        public Fact() : this(string.Empty) { }
 
-        public Fact(int treeId) : base(treeId)
+        public Fact(string treeId) : base(treeId)
         {
             Citations = new List<Citation>();
         }

@@ -8,6 +8,7 @@
 
 using FamilyTreeProject.Common;
 
+// ReSharper disable once CheckNamespace
 namespace FamilyTreeProject
 {
     /// <summary>
@@ -15,9 +16,9 @@ namespace FamilyTreeProject
     /// </summary>
     public class Repository : Entity
     {
-        public Repository() : base(-1) { }
+        public Repository() : base(string.Empty) { }
 
-        public Repository(int treeId) : base(treeId) { }
+        public Repository(string treeId) : base(treeId) { }
 
         /// <summary>
         /// The Address of the Repository

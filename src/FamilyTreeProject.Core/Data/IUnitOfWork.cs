@@ -1,4 +1,4 @@
-//******************************************
+﻿//******************************************
 //  Copyright (C) 2014-2015 Charles Nurse  *
 //                                         *
 //  Licensed under MIT License             *
@@ -6,16 +6,15 @@
 //                                         *
 // *****************************************
 
+using System;
+
 // ReSharper disable once CheckNamespace
-namespace FamilyTreeProject.Common
+namespace FamilyTreeProject.Data
 {
-    /// <summary>
-    ///   An Enum representing the Sex of an Individual
-    /// </summary>
-    public enum Sex
+    public interface IUnitOfWork : IDisposable
     {
-        Unknown = -1,
-        Male = 0,
-        Female = 1
+        void Commit();
+
+        IRepository<T> GetRepository<T>() where T : class;
     }
 }

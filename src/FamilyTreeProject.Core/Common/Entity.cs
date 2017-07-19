@@ -8,6 +8,7 @@
 
 using System.Collections.Generic;
 
+// ReSharper disable once CheckNamespace
 namespace FamilyTreeProject.Common
 {
     /// <summary>
@@ -21,7 +22,7 @@ namespace FamilyTreeProject.Common
         /// Constructs an Entity.
         /// </summary>
         /// <param name="treeId">The Id of the Tree</param>
-        protected Entity(int treeId) : base(treeId)
+        protected Entity(string treeId) : base(treeId)
         {
             Multimedia = new List<MultimediaLink>();
             Notes = new List<Note>();

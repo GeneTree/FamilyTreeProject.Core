@@ -9,6 +9,7 @@
 using System;
 using FamilyTreeProject.Common;
 
+// ReSharper disable once CheckNamespace
 namespace FamilyTreeProject
 {
     /// <summary>
@@ -16,14 +17,14 @@ namespace FamilyTreeProject
     /// </summary>
     public class Source : Entity
     {
-        public Source() : base(-1) { }
+        public Source() : base(string.Empty) { }
 
-        public Source(int treeId) : base(treeId)
+        public Source(string treeId) : base(treeId)
         {
             Author = String.Empty;
             Publisher = String.Empty;
             Title = String.Empty;
-            RepositoryId = -1;
+            RepositoryId = String.Empty;
         }
 
         /// <summary>
@@ -39,7 +40,7 @@ namespace FamilyTreeProject
         /// <summary>
         /// Gets and sets the Id of the Repository where the Source can be found
         /// </summary>
-        public int? RepositoryId { get; set; }
+        public string RepositoryId { get; set; }
 
         /// <summary>
         /// Gets and sets the Repository where the Source can be found

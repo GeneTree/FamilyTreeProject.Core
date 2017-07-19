@@ -6,6 +6,7 @@
 //                                         *
 // *****************************************
 
+// ReSharper disable once CheckNamespace
 namespace FamilyTreeProject.Common
 {
     public enum EntityType

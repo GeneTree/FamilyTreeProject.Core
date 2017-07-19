@@ -6,11 +6,10 @@
 //                                         *
 // *****************************************
 
-using System.Collections.Generic;
 using FamilyTreeProject.Common;
 
 // ReSharper disable ConvertPropertyToExpressionBody
-
+// ReSharper disable once CheckNamespace
 namespace FamilyTreeProject
 {
     /// <summary>
@@ -18,9 +17,9 @@ namespace FamilyTreeProject
     /// </summary>
     public class Family : AncestorEntity
     {
-        public Family() : base(-1) { }
+        public Family() : base(string.Empty) { }
 
-        public Family(int treeId) : base(treeId) { }
+        public Family(string treeId) : base(treeId) { }
 
         /// <summary>
         ///   Gets or sets a reference to the <see cref = "Individual" /> object representing
@@ -32,7 +31,7 @@ namespace FamilyTreeProject
         /// <summary>
         ///   Gets or sets the id of this family's husband
         /// </summary>
-        public int? HusbandId { get; set; }
+        public string HusbandId { get; set; }
 
         /// <summary>
         ///   Gets or sets a reference to the <see cref = "Individual" /> object representing
@@ -44,7 +43,7 @@ namespace FamilyTreeProject
         /// <summary>
         ///   Gets or sets the id of this family's wife
         /// </summary>
-        public int? WifeId { get; set; }
+        public string WifeId { get; set; }
 
         /// <summary>
         /// Create a shallow copy of this individual

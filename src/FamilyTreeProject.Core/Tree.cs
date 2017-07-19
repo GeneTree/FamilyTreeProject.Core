@@ -7,9 +7,8 @@
 // *****************************************
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
+// ReSharper disable once CheckNamespace
 namespace FamilyTreeProject
 {
     /// <summary>
@@ -31,7 +30,7 @@ namespace FamilyTreeProject
         /// <summary>
         /// The Id of the Tree
         /// </summary>
-        public int TreeId { get; set; }
+        public string TreeId { get; set; }
 
         /// <summary>
         /// The Description of the Tree

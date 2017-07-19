@@ -8,11 +8,12 @@
 
 using System.Collections.Generic;
 
+// ReSharper disable once CheckNamespace
 namespace FamilyTreeProject.Common
 {
     public abstract class AncestorEntity : Entity
     {
-        protected AncestorEntity(int treeId) : base(treeId)
+        protected AncestorEntity(string treeId) : base(treeId)
         {
             Children = new List<Individual>();
             Facts = new List<Fact>();
