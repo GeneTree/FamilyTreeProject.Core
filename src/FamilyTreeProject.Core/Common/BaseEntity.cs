@@ -31,6 +31,11 @@ namespace FamilyTreeProject.Common
         public string Id { get; set; }
 
         /// <summary>
+        /// Gets or sets the id of the individual for a GEDCOM file.
+        /// </summary>
+        public string XRefId { get; set; }
+
+        /// <summary>
         /// This property indicates whether the entity is New
         /// </summary>
         public bool IsNew

@@ -21,6 +21,11 @@ namespace FamilyTreeProject.Common
         /// The Id of the owner entity
         /// </summary>
         public string OwnerId { get; set; }
+        
+        /// <summary>
+        /// The Id of the owner entity for a GEDCOM file.
+        /// </summary>
+        public string OwnerXRefId { get; set; }
 
         /// <summary>
         /// The type of the owner entity

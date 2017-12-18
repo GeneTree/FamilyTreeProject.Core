@@ -36,6 +36,11 @@ namespace FamilyTreeProject
         public string SourceId { get; set; }
 
         /// <summary>
+        /// The Id for a GEDCOM file of the Source to which the citation is a part.
+        /// </summary>
+        public string SourceXRefId { get; set; }
+
+        /// <summary>
         /// The Source to which the citation belongs
         /// </summary>
         public Source Source { get; set; }

@@ -35,9 +35,15 @@ namespace FamilyTreeProject
         public Individual Father { get; set; }
 
         /// <summary>
-        ///   Gets or sets the id of this individual's father
+        ///   Gets or sets the id of this individual's father.
+        ///   -1 or null indicates no associated mother.
         /// </summary>
         public string FatherId { get; set; }
+
+        /// <summary>
+        ///   Gets or sets the id of this individual's father for a GEDCOM file.
+        /// </summary>
+        public string FatherXRefId { get; set; }
 
         /// <summary>
         ///   Gets or sets the first name of the individual
@@ -62,9 +68,15 @@ namespace FamilyTreeProject
         public Individual Mother { get; set; }
 
         /// <summary>
-        ///   Gets or sets the id of this individual's mother
+        ///   Gets or sets the id of this individual's mother.
+        ///   -1 or null indicates no associated mother.
         /// </summary>
         public string MotherId { get; set; }
+
+        /// <summary>
+        ///   Gets or sets the id of this individual's mother for a GEDCOM file.
+        /// </summary>
+        public string MotherXRefId { get; set; }
 
         /// <summary>
         /// Gets or sets the name of this Individual
@@ -93,11 +105,14 @@ namespace FamilyTreeProject
             return new Individual
                         {
                             FatherId = FatherId,
+                            FatherXRefId = FatherXRefId,
                             FirstName = FirstName,
                             Id = Id,
+                            XRefId = XRefId,
                             ImageId = ImageId,
                             LastName = LastName,
                             MotherId = MotherId,
+                            MotherXRefId = MotherXRefId,
                             Sex = Sex,
                             TreeId = TreeId
                         }; 

@@ -25,6 +25,7 @@ namespace FamilyTreeProject
             Publisher = String.Empty;
             Title = String.Empty;
             RepositoryId = String.Empty;
+            RepositoryXRefId = String.Empty;
         }
 
         /// <summary>
@@ -41,6 +42,11 @@ namespace FamilyTreeProject
         /// Gets and sets the Id of the Repository where the Source can be found
         /// </summary>
         public string RepositoryId { get; set; }
+
+        /// <summary>
+        /// Gets and sets the Id of the Repository where the Source can be found for a GEDCOM file.
+        /// </summary>
+        public string RepositoryXRefId { get; set; }
 
         /// <summary>
         /// Gets and sets the Repository where the Source can be found
